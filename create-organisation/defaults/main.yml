@@ -1,0 +1,4 @@
+---
+# defaults file for create-organisation
+
+tower_organisation_state: present

@@ -1,0 +1,12 @@
+---
+########################################
+## Playbook to test create team in Tower
+########################################
+- name: Create team in Tower
+  hosts: localhost
+  gather_facts: True
+
+
+  roles:
+
+  - role: tower/create-team

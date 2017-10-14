@@ -1,0 +1,27 @@
+---
+# defaults file for create-credential
+
+tower_credential_authorize: false
+tower_credential_autorize_password: ""
+tower_credential_become_method: ""
+tower_credential_become_password: ""
+tower_credential_client: ""
+tower_credential_description: ""
+tower_credential_domain: ""
+tower_credential_host: ""
+tower_credential_kind: ""
+tower_credential_organization: ""
+tower_credential_password: ""
+tower_credential_project: ""
+tower_credential_secret: ""
+tower_credential_ssh_key_data: ""
+tower_credential_ssh_key_unlock: ""
+tower_credential_state: present
+tower_credential_subscription: ""
+tower_credential_team: ""
+tower_credential_tenant: ""
+tower_credential_tower_config_file: ""
+tower_credential_tower_verify_ssl: True
+tower_credential_user: ""
+tower_credential_username: ""
+tower_credential_vault_password: ""

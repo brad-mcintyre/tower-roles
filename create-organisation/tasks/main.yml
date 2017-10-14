@@ -1,0 +1,9 @@
+---
+- name: Create tower organisation
+  tower_organization:
+    name: "{{ tower_organisation_name }}"
+    description: "{{ tower_organisation_description }}"
+    state: "{{ tower_organisation_state }}"
+    tower_host: "{{ tower_host_name }}"
+    tower_username: "{{ tower_admin_user }}"
+    tower_password: "{{ tower_admin_user_password }}"

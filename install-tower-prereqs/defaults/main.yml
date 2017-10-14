@@ -1,0 +1,6 @@
+---
+# defaults file for install-tower-prereqs
+
+  tower_prereq_yum_packages: {}
+  tower_pip_packages: {}
+  tower_npm_packages: {}

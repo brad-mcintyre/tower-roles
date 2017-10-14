@@ -1,0 +1,4 @@
+- src: git+https://azure-nagios.ds.acc.co.nz/config-genie/acc-roles/tower.git
+  scm: git
+  version: development
+  name: tower

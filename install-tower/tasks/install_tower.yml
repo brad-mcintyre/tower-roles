@@ -1,0 +1,58 @@
+---
+# - name: install_tower | Download Tower bundle from URL source
+#   get_url:
+#     url: "https://{{ binarysource_servername }}/repository/{{ binarysource_repository }}/{{ tower_binary_group }}/{{ tower_installer_archive }}"
+#     dest: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
+#     validate_certs: no
+#   tags: ansible_tower_install
+#
+# - name: install_tower | Extract the archive
+#   unarchive:
+#     src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
+#     dest: "{{ tower_unpack_location }}"
+#     copy: no
+#     mode: 0777
+
+- name: install_tower | Copy ansible tower inventory file
+  template:
+    src: inventory.j2
+    dest: "{{tower_unpack_location}}/{{ tower_files_unpacked_dir }}/inventory"
+    mode: "0777"
+  become: yes
+
+- name: install_tower | Remove potentially conflicting repo if it exists
+  file:
+    state: absent
+    path: /etc/yum.repos.d/ansible-tower.repo
+  when: tower_bundle_install
+  become: yes
+
+- name: tower_install | Clean existing repo data
+  shell: yum clean all
+  when: tower_bundle_install
+  become: yes
+
+- name: Increase /var logical volume to 20GB
+  lvol:
+    vg: VGRoot
+    lv: varvol
+    size: 20480
+  when: site == "onprem"
+
+- name: Resize /var filesystem
+  shell: xfs_growfs /var
+
+- name: tower_install | Run the setup script
+  shell: umask 0022 ; ./setup.sh
+  args:
+    chdir: "{{ tower_unpack_location }}/{{ tower_files_unpacked_dir }}"
+  become: yes
+  ignore_errors: yes
+
+- name: Copy license
+  copy:
+    src: license
+    dest: /etc/tower/license
+    mode: 0640
+    owner: awx
+    group: awx

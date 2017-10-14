@@ -1,0 +1,21 @@
+---
+- name: Create tower Project
+  tower_project:
+    name: "{{ item.tower_project_name }}"
+    description: "{{ item.tower_project_description | default(tower_project_description) }}"
+    local_path: "{{ item.tower_project_local_path | default(tower_project_local_path) }}"
+    organization: "{{ item.tower_project_organisation | default(tower_project_organisation) }}"
+    scm_type: "{{ item.tower_project_scm_type | default(tower_project_scm_type) }}"
+    scm_url: "{{ item.tower_project_scm_url | default(tower_project_scm_url) }}"
+    scm_branch: "{{ item.tower_project_scm_branch | default(tower_project_scm_branch) }}"
+    scm_credential: "{{ item.tower_project_scm_credential | default(tower_project_scm_credential) }}"
+    scm_delete_on_update: "{{ item.tower_project_scm_delete_on_update | default(tower_project_scm_delete_on_update) }}"
+    scm_update_on_launch: "{{ item.tower_project_scm_update_on_launch | default(tower_project_scm_update_on_launch) }}"
+    scm_clean: "{{ item.tower_project_scm_clean | default(tower_project_scm_clean) }}"
+    tower_config_file: "{{ item.tower_project_tower_config_file | default(tower_project_tower_config_file) }}"
+    tower_host: "{{ tower_host_name }}"
+    tower_username: "{{ tower_toweradmin_user_name }}"
+    tower_password: "{{ tower_toweradmin_user_password }}"
+    state: "{{ item.tower_project_state | default(tower_project_state) }}"
+    tower_verify_ssl: "{{ tower_project_tower_verify_ssl | default(tower_project_tower_verify_ssl) }}"
+  with_items: "{{ tower_projects }}"

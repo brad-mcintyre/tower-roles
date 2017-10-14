@@ -1,0 +1,4 @@
+---
+# defaults file for tower-create-team
+
+tower_team_state: present

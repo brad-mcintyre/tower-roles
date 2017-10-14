@@ -1,0 +1,16 @@
+---
+# defaults file for create-project
+
+tower_project_description: ""
+tower_project_local_path: ""
+tower_project_organisation: ""
+tower_project_scm_type: ""
+tower_project_scm_url: ""
+tower_project_scm_branch: ""
+tower_project_scm_credential: ""
+tower_project_scm_delete_on_update: false
+tower_project_scm_update_on_launch: false
+tower_project_scm_clean: false
+tower_project_tower_config_file: ""
+tower_project_state: present
+tower_project_tower_verify_ssl: true

@@ -1,0 +1,13 @@
+---
+# defaults file for create-user
+
+tower_user_auditor: ""
+tower_user_email: "default@local.com"
+tower_user_first_name: ""
+tower_user_last_name: ""
+tower_user_password: ""
+tower_user_state: present
+tower_user_superuser: ""
+tower_user_tower_config_file: ""
+tower_user_tower_verify_ssl: ""
+tower_user_username: default

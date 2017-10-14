@@ -1,0 +1,11 @@
+---
+- name: Create tower Inventory
+  tower_inventory:
+    name: "{{ item.tower_inventory_name }}"
+    description: "{{ item.tower_inventory_description }}"
+    organization: "{{ item.tower_inventory_organisation }}"
+    tower_host: "{{ tower_host_name }}"
+    tower_username: "{{ tower_toweradmin_user_name }}"
+    tower_password: "{{ tower_toweradmin_user_password }}"
+    state: "{{ tower_inventory_state }}"
+  with_items: "{{ tower_inventories }}"

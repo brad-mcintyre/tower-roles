@@ -1,0 +1,15 @@
+---
+- name: Create tower User
+  tower_user:
+    name: "{{ item.tower_user_name }}"
+    auditor: "{{ item.tower_user_auditor | default(tower_user_auditor)  }}"
+    email: "{{ item.tower_user_email | default(tower_user_email) }}"
+    first_name: "{{ item.tower_user_first_name | default(tower_user_first_name) }}"
+    last_name: "{{ item.tower_user_last_name | default(tower_user_last_name) }}"
+    password: "{{ item.tower_user_password | default(tower_user_password)}}"
+    state: "{{ item.tower_user_state | default(tower_user_state) }}"
+    superuser: "{{ item.tower_user_superuser | default(tower_user_superuser) }}"
+    tower_config_file: "{{ item.tower_user_tower_config_file | default(tower_user_tower_config_file) }}"
+    tower_verify_ssl: "{{ item.tower_user_tower_verify_ssl | default(tower_user_tower_verify_ssl) }}"
+    username: "{{ item.tower_user_username | default(tower_user_username)}}"
+  with_items: "{{ tower_credentials }}"

@@ -1,0 +1,15 @@
+---
+# defaults file for install-tower
+
+tower_bundle_install: true
+tower_binary_group: ansible
+tower_installer_archive: ansible-tower-setup-bundle-{{ tower_version }}-1.el7.tar.gz
+tower_tar_location: /tmp
+tower_unpack_location: /usr/local/src
+tower_files_unpacked_dir: ansible-tower-setup-bundle-{{ tower_version }}-1.el7
+
+tower_database_external: false
+tower_postgresql_database_name: awx
+tower_postgresql_database_user: awx
+
+tower_rabbitmq_username: tower

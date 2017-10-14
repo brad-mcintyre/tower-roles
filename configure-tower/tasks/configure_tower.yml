@@ -1,0 +1,17 @@
+---
+
+- block:
+
+  - name: Install openldap-clients as a requirement
+    yum:
+      name: openldap-clients
+      state: present
+
+  - name: Copy ldap config
+    template:
+      src: ldap.py.j2
+      dest: /etc/tower/conf.d/ldap.py
+      mode: 0640
+      owner: awx
+      group: awx
+    notify: restart_tower

@@ -1,0 +1,4 @@
+---
+# defaults file for create-inventory
+
+tower_inventory_state: present

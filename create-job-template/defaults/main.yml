@@ -1,0 +1,27 @@
+---
+# defaults file for create-credential
+
+tower_job_template_ask_credential: false
+tower_job_template_ask_extra_vars: false
+tower_job_template_ask_inventory: false
+tower_job_template_ask_job_type: false
+tower_job_template_ask_tags: false
+tower_job_template_become_enabled: false
+tower_job_template_cloud_credential: ""
+tower_job_template_description: ""
+tower_job_template_extra_vars_path: ""
+tower_job_template_forks: 0
+tower_job_template_host_config_key: ""
+tower_job_template_inventory: ""
+tower_job_template_job_tags: ""
+tower_job_template_job_type: run
+tower_job_template_limit: ""
+tower_job_template_machine_credential: ""
+tower_job_template_network_credential: ""
+tower_job_template_playbook: ""
+tower_job_template_project: ""
+tower_job_template_skip_tags: ""
+tower_job_template_state: present
+tower_job_template_tower_config_file: ""
+tower_job_template_tower_verify_ssl: true
+tower_job_template_verbosity: debug

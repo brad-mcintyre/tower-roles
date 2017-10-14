@@ -1,0 +1,19 @@
+---
+
+- name: Ensure required yum dependancy packages are installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ tower_yum_packages }}"
+  register: yum_result
+- debug:
+    var: yum_result
+
+- name: Ensure required pip packages are installed
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ tower_pip_packages }}"
+  register: pip_result
+- debug:
+    var: pip_result

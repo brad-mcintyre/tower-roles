@@ -1,0 +1,16 @@
+---
+# defaults file for configure-tower
+
+# tower_admin_user_password: pass
+# tower_setup_email: no
+# tower_default_from_email: ''
+# tower_email_subject_prefix: '[AWX]'
+# tower_email_host: ''
+# tower_email_port: ''
+# tower_email_host_user: ''
+# tower_email_host_password: ''
+# tower_email_use_tls: True
+# tower_awx_proot_enabled: False
+# tower_socket_io_listner_port: 8080
+# tower_remote_host_headers: "['REMOTE_ADDR', 'REMOTE_HOST']"
+#
