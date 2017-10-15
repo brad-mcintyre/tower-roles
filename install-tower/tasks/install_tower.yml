@@ -9,7 +9,7 @@
 - name: install_tower | Extract the archive
   unarchive:
     src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
-    dest: "{{ tower_unpack_location }}"
+    dest: "{{ tower_unpack_location }}/{{ tower_files_unpacked_dir }}"
     copy: no
     mode: 0777
 
