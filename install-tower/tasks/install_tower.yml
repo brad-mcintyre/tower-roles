@@ -6,6 +6,12 @@
 #     validate_certs: no
 #   tags: ansible_tower_install
 #
+- name: install_tower | Create unpacked dir
+  file:
+    path: "{{ tower_unpack_location }}/{{ tower_files_unpacked_dir }}"
+    state: directory
+    mode: 0777
+    
 - name: install_tower | Extract the archive
   unarchive:
     src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
