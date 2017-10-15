@@ -11,6 +11,7 @@
     path: "{{ tower_unpack_location }}/{{ tower_files_unpacked_dir }}"
     state: directory
     mode: 0777
+  become: yes
     
 - name: install_tower | Extract the archive
   unarchive:
