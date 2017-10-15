@@ -6,12 +6,12 @@
 #     validate_certs: no
 #   tags: ansible_tower_install
 #
-# - name: install_tower | Extract the archive
-#   unarchive:
-#     src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
-#     dest: "{{ tower_unpack_location }}"
-#     copy: no
-#     mode: 0777
+- name: install_tower | Extract the archive
+  unarchive:
+    src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
+    dest: "{{ tower_unpack_location }}"
+    copy: no
+    mode: 0777
 
 - name: install_tower | Copy ansible tower inventory file
   template:
