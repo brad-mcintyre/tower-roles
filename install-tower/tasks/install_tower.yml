@@ -12,7 +12,7 @@
     state: directory
     mode: 0777
   become: yes
-    
+
 - name: install_tower | Extract the archive
   unarchive:
     src: "{{ tower_tar_location }}/{{ tower_installer_archive }}"
@@ -39,15 +39,15 @@
   when: tower_bundle_install
   become: yes
 
-- name: Increase /var logical volume to 20GB
-  lvol:
-    vg: VGRoot
-    lv: varvol
-    size: 20480
-  when: site == "onprem"
-
-- name: Resize /var filesystem
-  shell: xfs_growfs /var
+# - name: Increase /var logical volume to 20GB
+#   lvol:
+#     vg: VGRoot
+#     lv: varvol
+#     size: 20480
+#   when: site == "onprem"
+#
+# - name: Resize /var filesystem
+#   shell: xfs_growfs /var
 
 - name: tower_install | Run the setup script
   shell: umask 0022 ; ./setup.sh
